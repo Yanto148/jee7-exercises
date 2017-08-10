@@ -3,9 +3,11 @@ package com.realdolmen.candyshop.services;
 import com.realdolmen.candyshop.repositories.CandyRepository;
 import com.realdolmen.candyshop.web.CandyController;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.criteria.CriteriaBuilder;
 
+@ApplicationScoped
 public class CandyService {
 
     @Inject

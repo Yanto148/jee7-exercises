@@ -2,7 +2,8 @@ package com.realdolmen.candyshop.web;
 
 import com.realdolmen.candyshop.services.CandyService;
 
-import javax.faces.bean.RequestScoped;
+
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 @RequestScoped
