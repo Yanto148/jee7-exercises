@@ -9,4 +9,6 @@ import javax.inject.Inject;
 @ApplicationScoped
 public class CandyRepository {
 
+    public void findAllCandy(){}
+
 }

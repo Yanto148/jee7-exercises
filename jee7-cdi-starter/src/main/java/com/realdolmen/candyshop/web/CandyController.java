@@ -19,6 +19,7 @@ public class CandyController {
     public void findAllCandy()
     {
         log.log(Level.INFO, "Finding all candy...");
+        candyService.findAllCandy();
     }
 
     public void findCandyByColor()

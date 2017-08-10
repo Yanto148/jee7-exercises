@@ -22,7 +22,8 @@ public class PersonController {
 
     public void findPersonById(int i)
     {
-    log.log(Level.INFO, "Finding person by id...");
+        log.log(Level.INFO, "Finding person by id...");
+        personService.findPersonById(1);
     }
 
     public PersonService getPersonService() {

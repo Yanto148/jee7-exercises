@@ -20,6 +20,7 @@ public class PersonService
     public void findPersonById(int i)
     {
         log.log(Level.INFO, "Finding person by id...");
+        personRepository.findPersonById(i);
     }
 
     public PersonRepository getPersonRepository() {

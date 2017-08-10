@@ -22,6 +22,7 @@ public class CandyService {
     public void findAllCandy()
     {
         log.log(Level.INFO, "Finding all candy...");
+        candyRepository.findAllCandy();
     }
 
     public CandyRepository getCandyRepository() {
