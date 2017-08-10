@@ -5,16 +5,24 @@ import com.realdolmen.candyshop.services.PersonService;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @RequestScoped
 public class PersonController {
 
     @Inject PersonService personService;
+    @Inject
+    Logger log;
 
-    public void savePerson(Person person) {
+    public void savePerson(Person person)
+    {
+        log.log(Level.INFO, "Saving person to database...");
     }
 
-    public void findPersonById(int i) {
+    public void findPersonById(int i)
+    {
+    log.log(Level.INFO, "Finding person by id...");
     }
 
     public PersonService getPersonService() {
