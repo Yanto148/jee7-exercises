@@ -9,6 +9,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>com.realdolmen.candyshop.domain.Person</class>
+        <class>com.realdolmen.candyshop.domain.Candy</class>
 
         <!--TODO: add Candy as an entity -->
 
