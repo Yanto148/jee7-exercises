@@ -6,7 +6,6 @@ import javax.persistence.MappedSuperclass;
 
 // TODO: Make into a mapped superclass, not an entity!
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Tracked {
     // TODO: add property userCreated (String)
     private String userCreated;

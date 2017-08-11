@@ -6,7 +6,8 @@ import javax.persistence.*;
 // TODO: use inheritance strategy and set discriminator column name
 // TODO: subclass from Tracked
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "candy_type")
 @DiscriminatorValue("Candy")
 public abstract class Candy extends Tracked {
