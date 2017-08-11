@@ -62,8 +62,8 @@ public class OrderPersistenceTest extends AbstractPersistenceTest {
     @Test
     public void orderCanCalculateTotalPrice() throws Exception {
         // TODO: implement this test
-        Order o = em.find(Order.class, 1000L);
+        Order o = em.find(Order.class, 3000L);
         double totalPrice = o.calculateTotal();
-        assertEquals(1000, totalPrice, 0.01);
+        assertEquals(3740, totalPrice, 0.01);
     }
 }
