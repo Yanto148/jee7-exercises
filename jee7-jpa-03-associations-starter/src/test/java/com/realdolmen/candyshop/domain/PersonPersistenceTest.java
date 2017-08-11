@@ -66,4 +66,5 @@ public class PersonPersistenceTest extends AbstractPersistenceTest {
         List<Order> h = p.getOrderHistory();
         assertEquals(2, h.size());
     }
+
 }

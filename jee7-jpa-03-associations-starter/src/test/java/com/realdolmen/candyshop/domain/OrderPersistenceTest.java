@@ -1,7 +1,6 @@
 package com.realdolmen.candyshop.domain;
 
 import com.realdolmen.candyshop.AbstractPersistenceTest;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -54,12 +53,17 @@ public class OrderPersistenceTest extends AbstractPersistenceTest {
     @Test
     public void orderCanAddOrderLine() throws Exception {
         // TODO: implement this test
-        Assert.fail("TODO");
+        Order o = em.find(Order.class, 1000L);
+        OrderLine orderLine = em.find(OrderLine.class, 8000L);
+        o.getOrderLines().add(orderLine);
+        assertEquals(4, o.getOrderLines().size());
     }
 
     @Test
     public void orderCanCalculateTotalPrice() throws Exception {
         // TODO: implement this test
-        Assert.fail("TODO");
+        Order o = em.find(Order.class, 1000L);
+        double totalPrice = o.calculateTotal();
+        assertEquals(1000, totalPrice, 0.01);
     }
 }

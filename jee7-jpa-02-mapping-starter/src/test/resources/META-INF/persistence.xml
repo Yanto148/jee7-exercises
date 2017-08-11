@@ -9,9 +9,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>com.realdolmen.candyshop.domain.Person</class>
-        <class>com.realdolmen.candyshop.domain.Candy</class>
-
         <!--TODO: add Candy as an entity -->
+        <class>com.realdolmen.candyshop.domain.Candy</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

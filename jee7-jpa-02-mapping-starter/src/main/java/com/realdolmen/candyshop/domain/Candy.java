@@ -8,7 +8,7 @@ public class Candy {
 
     // TODO: add properties id (Long, pk), name (String), price (double)
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private double price;

@@ -12,6 +12,8 @@
         <class>com.realdolmen.candyshop.domain.Candy</class>
         <class>com.realdolmen.candyshop.domain.Order</class>
         <class>com.realdolmen.candyshop.domain.OrderLine</class>
+        <class>com.realdolmen.candyshop.domain.Address</class>
+        <class>com.realdolmen.candyshop.domain.CandyColor</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

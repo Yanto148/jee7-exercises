@@ -29,7 +29,7 @@ public class Person {
 
     // TODO: add property age (not stored in database, but calculated from birthdate
     @Transient
-    private long age;
+    private long age;       // Can be long and does not have to be Long since birthday is not nullable. If birthday was nullable, this would have to be Long
 
     // TODO: add embedded mapping to address
     @Embedded
