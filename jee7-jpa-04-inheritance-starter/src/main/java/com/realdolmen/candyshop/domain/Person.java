@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 // TODO: subclass from Tracked
-public class Person {
+public class Person extends Tracked {
     @Id
     @GeneratedValue
     private Long id;
