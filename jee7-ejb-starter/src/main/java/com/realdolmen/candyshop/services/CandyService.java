@@ -19,7 +19,6 @@ public class CandyService implements CandyServiceInterface {
     @Inject
     PersonService personService;
 
-    @Override
     public CandyRepository getCandyRepository() {
         return candyRepository;
     }

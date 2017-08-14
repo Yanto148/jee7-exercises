@@ -9,8 +9,6 @@ import java.util.List;
 
 @Remote
 public interface CandyServiceInterface {
-    CandyRepository getCandyRepository();
-
     List<Candy> findAllCandy();
 
     List<Candy> findCandyByColor(CandyColor candyColor);
