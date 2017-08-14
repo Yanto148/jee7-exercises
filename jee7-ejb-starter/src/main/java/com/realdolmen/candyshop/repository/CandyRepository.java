@@ -7,7 +7,9 @@ import com.realdolmen.candyshop.domain.Person;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.Inheritance;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.List;
 @Stateless
 public class CandyRepository {
     // TODO Retrieve the EntityManager
-    @PersistenceContext
+    @Inject
     EntityManager em;
 
     public double findAverageCandyPrice() {

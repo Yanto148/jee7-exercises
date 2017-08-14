@@ -4,6 +4,7 @@ import com.realdolmen.candyshop.domain.Candy;
 import com.realdolmen.candyshop.domain.CandyColor;
 import com.realdolmen.candyshop.repository.CandyRepository;
 
+import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
@@ -12,6 +13,8 @@ import java.util.List;
 
 // TODO Make this component a Stateless Session Bean and make its methods accessible remotely
 @Stateless
+@Remote
+@LocalBean
 public class CandyService implements CandyServiceInterface {
     @Inject
     CandyRepository candyRepository;
