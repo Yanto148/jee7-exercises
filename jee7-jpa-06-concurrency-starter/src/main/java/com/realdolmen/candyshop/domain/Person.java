@@ -30,6 +30,8 @@ public class Person extends Tracked {
     private long age;
 
     // TODO: add a version column
+    @Version
+    private int version;
 
     @Embedded
     private Address address;
@@ -44,6 +46,11 @@ public class Person extends Tracked {
     private List<Order> orderHistory = new ArrayList<>();
 
     // TODO: add a post load entity listener to calculate age from birthDate. Use DateUtils#yearsFrom()
+    @PostLoad
+    private void initAge()
+    {
+        this.age = DateUtils.yearsFrom(birthDate);
+    }
 
     public Long getId() {
         return id;

@@ -20,6 +20,8 @@ public abstract class Candy extends Tracked {
     private CandyColor color;
 
     // TODO: add a version column
+    @Version
+    private int version;
 
     public Long getId() {
         return id;
