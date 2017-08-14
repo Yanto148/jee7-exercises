@@ -3,17 +3,24 @@ package com.realdolmen.candyshop.services;
 import com.realdolmen.candyshop.domain.Person;
 import com.realdolmen.candyshop.repository.PersonRepository;
 
+import javax.ejb.Local;
+import javax.ejb.LocalBean;
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 
 
 // TODO Make this component a Stateless Session Bean and make its methods accessible remotely
-@ApplicationScoped
-public class PersonService {
+@Stateless
+@Remote
+@LocalBean
+public class PersonService implements PersonServiceInterface {
     @Inject
     PersonRepository personRepository;
 
+    @Override
     public Person savePerson(Person person) {
         personRepository.savePerson(person);
         return person;
@@ -23,10 +30,12 @@ public class PersonService {
         return personRepository;
     }
 
+    @Override
     public Person findPersonById(long id) {
         return personRepository.findPersonById(id);
     }
 
+    @Override
     public List<Person> findAllPeople() {
         return personRepository.findAllPeople();
     }

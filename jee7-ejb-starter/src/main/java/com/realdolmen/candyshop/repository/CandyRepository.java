@@ -4,15 +4,19 @@ import com.realdolmen.candyshop.domain.Candy;
 import com.realdolmen.candyshop.domain.CandyColor;
 import com.realdolmen.candyshop.domain.Person;
 
+import javax.ejb.Local;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
 // TODO Make this a Stateless Session Bean
-@ApplicationScoped
+@Stateless
 public class CandyRepository {
     // TODO Retrieve the EntityManager
+    @PersistenceContext
     EntityManager em;
 
     public double findAverageCandyPrice() {

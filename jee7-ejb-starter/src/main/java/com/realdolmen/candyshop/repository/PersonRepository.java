@@ -2,14 +2,17 @@ package com.realdolmen.candyshop.repository;
 
 import com.realdolmen.candyshop.domain.Person;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 // TODO Make this a Stateless Session Bean
-@ApplicationScoped
+@Stateless
 public class PersonRepository {
     // TODO Retrieve the EntityManager
+    @PersistenceContext
     EntityManager em;
 
     public Person findPersonById(long id) {
