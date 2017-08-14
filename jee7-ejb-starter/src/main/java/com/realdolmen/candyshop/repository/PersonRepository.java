@@ -4,6 +4,7 @@ import com.realdolmen.candyshop.domain.Person;
 
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @Stateless
 public class PersonRepository {
     // TODO Retrieve the EntityManager
-    @PersistenceContext
+    @Inject
     EntityManager em;
 
     public Person findPersonById(long id) {
