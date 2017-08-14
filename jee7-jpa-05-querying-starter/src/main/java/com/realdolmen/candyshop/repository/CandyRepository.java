@@ -13,19 +13,24 @@ public class CandyRepository {
 
     public double findAverageCandyPrice() {
         // TODO: implement this method
-        Query query = em.createQuery("SELECT avg(c.price) FROM Candy c", Double.class);
-        return (Double) query.getSingleResult();
+        TypedQuery<Double> query = em.createQuery("SELECT avg(c.price) FROM Candy c", Double.class);
+        return query.getSingleResult();
     }
 
     public List<Candy> findCandyByNameLike(String name) {
         // TODO: implement this method
-        Query query = em.createQuery("SELECT c FROM Candy c WHERE c.name LIKE :name", Candy.class);
+        TypedQuery<Candy> query = em.createQuery("SELECT c FROM Candy c WHERE c.name LIKE :name", Candy.class);
         query.setParameter("name", '%' + name + '%');
         return query.getResultList();
     }
 
     public List<Candy> findUniqueCandyForPersonOrderHistory(Person p) {
         // TODO: implement this method
-        return null;
+        TypedQuery<Candy> query = em.createQuery(
+                "select distinct ol.candy from Person p join p.orderHistory o join o.orderLines ol where p = :person order by ol.candy.name",
+                Candy.class
+        );
+        query.setParameter("person", p);
+        return query.getResultList();
     }
 }

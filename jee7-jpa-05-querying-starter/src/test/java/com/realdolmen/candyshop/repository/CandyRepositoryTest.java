@@ -41,7 +41,5 @@ public class CandyRepositoryTest extends AbstractPersistenceTest {
         assertEquals("Jolly Ranger M&Ms", c.get(0).getName());
         assertEquals("Jumbo Gummy Bears", c.get(1).getName());
         assertEquals("Pink Kisses", c.get(2).getName());
-
-
     }
 }
