@@ -7,4 +7,14 @@
 
     <!-- TODO Optional: use your index.xhtml page as welcome-file -->
 
+    <servlet>
+        <servlet-name>myFacesServlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>myFacesServlet</servlet-name>
+        <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+
 </web-app>
