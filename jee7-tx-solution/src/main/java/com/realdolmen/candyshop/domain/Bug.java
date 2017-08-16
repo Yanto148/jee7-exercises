@@ -2,7 +2,7 @@ package com.realdolmen.candyshop.domain;
 
 import javax.ejb.ApplicationException;
 
-@ApplicationException(rollback = true)
+//@ApplicationException(rollback = true)
 public class Bug extends Exception {
     public static void causeMischief(String why) throws Bug {
         throw new Bug(why);

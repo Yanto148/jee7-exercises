@@ -8,12 +8,16 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
 // TODO This should be a SLSB with remote access
+@Remote
+@Stateless
 public class Bank implements BankRemote {
     // TODO Retrieve the AccountRepository
+    @Inject
     private AccountRepository repository;
 
     @Override
@@ -28,7 +32,7 @@ public class Bank implements BankRemote {
         from = repository.save(from);
 
         // TODO Uncomment the Bug below to see if you handle transactions correctly
-        // Bug.causeMischief("i like it");
+        Bug.causeMischief("i like it");
 
         to.setBalance(to.getBalance().add(amount));
         return repository.save(to);

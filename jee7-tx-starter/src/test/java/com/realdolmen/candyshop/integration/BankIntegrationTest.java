@@ -4,6 +4,7 @@ import com.realdolmen.candyshop.AbstractRemoteIntegrationTest;
 import com.realdolmen.candyshop.domain.Account;
 import com.realdolmen.candyshop.domain.Bug;
 import com.realdolmen.candyshop.service.BankRemote;
+import com.realdolmen.candyshop.utils.BankProducers;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -21,6 +22,7 @@ public class BankIntegrationTest extends AbstractRemoteIntegrationTest {
     @BeforeClass
     public static void init() throws NamingException {
         // TODO Look up the BankRemote
+        bank = lookup("jee7-tx-starter/Bank!com.realdolmen.candyshop.service.BankRemote");
     }
 
     @Test

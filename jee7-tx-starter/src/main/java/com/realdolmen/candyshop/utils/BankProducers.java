@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContext;
  */
 public class BankProducers {
     // TODO Get the EntityManager
+    @PersistenceContext
     private EntityManager entityManager;
 
     // TODO Produce the EntityManager
