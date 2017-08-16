@@ -2,6 +2,7 @@ package com.realdolmen.candyshop.services;
 
 import com.realdolmen.candyshop.domain.Candy;
 import com.realdolmen.candyshop.domain.CandyColor;
+import com.realdolmen.candyshop.interceptors.ActivateTimer;
 import com.realdolmen.candyshop.repository.CandyRepository;
 
 import javax.ejb.LocalBean;
@@ -14,6 +15,7 @@ import java.util.List;
 @Remote
 @LocalBean
 // TODO Apply the Interceptor
+@ActivateTimer
 public class CandyService implements CandyServiceRemote {
     @Inject
     CandyRepository candyRepository;

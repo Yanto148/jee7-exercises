@@ -2,6 +2,7 @@ package com.realdolmen.candyshop.services;
 
 import com.realdolmen.candyshop.domain.Address;
 import com.realdolmen.candyshop.domain.Person;
+import com.realdolmen.candyshop.interceptors.ActivateTimer;
 import com.realdolmen.candyshop.util.DateUtils;
 
 import javax.ejb.LocalBean;
@@ -17,6 +18,7 @@ import javax.inject.Inject;
 @Remote
 @LocalBean
 // TODO Apply the Interceptor
+@ActivateTimer
 public class RegistrationService implements RegistrationServiceRemote {
     @Inject
     PersonService service;
