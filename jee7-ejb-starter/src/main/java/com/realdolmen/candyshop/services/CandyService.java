@@ -21,7 +21,6 @@ public class CandyService implements CandyServiceRemote {
     @Inject
     PersonService personService;
 
-    @Override
     public CandyRepository getCandyRepository() {
         return candyRepository;
     }
