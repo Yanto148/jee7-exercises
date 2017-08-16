@@ -7,7 +7,6 @@ import com.realdolmen.candyshop.repository.CandyRepository;
 import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 
@@ -15,7 +14,7 @@ import java.util.List;
 @Stateless
 @Remote
 @LocalBean
-public class CandyService implements CandyServiceInterface {
+public class CandyService implements CandyServiceRemote {
     @Inject
     CandyRepository candyRepository;
 

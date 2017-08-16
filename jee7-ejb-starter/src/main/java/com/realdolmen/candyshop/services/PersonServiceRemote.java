@@ -5,7 +5,7 @@ import com.realdolmen.candyshop.domain.Person;
 import javax.ejb.Remote;
 import java.util.List;
 
-public interface PersonServiceInterface {
+public interface PersonServiceRemote {
     Person savePerson(Person person);
 
     Person findPersonById(long id);

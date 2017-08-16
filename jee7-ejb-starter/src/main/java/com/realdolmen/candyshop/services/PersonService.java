@@ -3,11 +3,9 @@ package com.realdolmen.candyshop.services;
 import com.realdolmen.candyshop.domain.Person;
 import com.realdolmen.candyshop.repository.PersonRepository;
 
-import javax.ejb.Local;
 import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 
@@ -16,7 +14,7 @@ import java.util.List;
 @Stateless
 @Remote
 @LocalBean
-public class PersonService implements PersonServiceInterface {
+public class PersonService implements PersonServiceRemote {
     @Inject
     PersonRepository personRepository;
 

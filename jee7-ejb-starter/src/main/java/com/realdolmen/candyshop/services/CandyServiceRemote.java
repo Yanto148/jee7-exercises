@@ -8,7 +8,7 @@ import javax.ejb.Remote;
 import java.util.List;
 
 @Remote
-public interface CandyServiceInterface {
+public interface CandyServiceRemote {
     CandyRepository getCandyRepository();
 
     List<Candy> findAllCandy();
