@@ -12,7 +12,14 @@
     <li>First Name: #{registrationController.person.firstName}</li>
     <li>Last Name: #{registrationController.person.lastName}</li>
     <li>Birth Date: #{registrationController.person.birthDate}</li>
+    <li>Birth Date: #{registrationController.person.address.street}</li>
+    <li>Birth Date: #{registrationController.person.address.number}</li>
+    <li>Birth Date: #{registrationController.person.address.city}</li>
+    <li>Birth Date: #{registrationController.person.address.postalCode}</li>
 </ul>
 <!-- TODO Add a form with command button that saves the person into the database -->
+<h:form>
+    <h:commandButton value="Confirm" action="#{registrationController.register}"/>
+</h:form>
 </body>
 </html>

@@ -7,11 +7,12 @@ import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.List;
 
 @Stateless
 @LocalBean
-public class PersonServiceBean implements PersonServiceRemote{
+public class PersonServiceBean implements PersonServiceRemote, Serializable{
     @EJB
     PersonRepository personRepository;
 
