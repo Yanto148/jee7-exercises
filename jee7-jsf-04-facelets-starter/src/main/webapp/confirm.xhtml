@@ -1,28 +1,28 @@
 <!-- TODO Adapt this XHTML page to use the template -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
->
-<head>
-    <title>Confirmation</title>
-</head>
-<body>
-<h1>Confirmation</h1>
-<p>Are these the correct values?</p>
-<ul>
-    <li>First Name: #{registrationController.person.firstName}</li>
-    <li>Last Name: #{registrationController.person.lastName}</li>
-    <li>
-        Birth Date:
-        <h:outputText value="#{registrationController.person.birthDate}">
-            <f:convertDateTime pattern="yyyy-MM-dd"/>
-        </h:outputText>
-    </li>
-</ul>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition template="WEB-INF/templates/template.xhtml">
+    <ui:define name="pageContent">
+        <h1>Confirmation</h1>
+        <p>Are these the correct values?</p>
+        <ul>
+            <li>First Name: #{registrationController.person.firstName}</li>
+            <li>Last Name: #{registrationController.person.lastName}</li>
+            <li>
+                Birth Date:
+                <h:outputText value="#{registrationController.person.birthDate}">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                </h:outputText>
+            </li>
+        </ul>
 
-<h:form>
-    <!-- TODO Add a Bootstrap style to this button -->
-    <h:commandButton value="Yes" action="#{registrationController.savePerson()}"/>
-</h:form>
-</body>
+        <h:form>
+            <!-- TODO Add a Bootstrap style to this button -->
+            <h:commandButton value="Yes" styleClass="btn btn-primary" action="#{registrationController.savePerson()}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
 </html>
