@@ -30,6 +30,6 @@ public class RegistrationController implements Serializable {
         personService.save(person);
         this.person = new Person();
         // TODO From `confirm` go to `people` instead of going back to `registration`
-        return "registration?faces-redirect=true";
+        return "people";
     }
 }
