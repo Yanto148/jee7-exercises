@@ -9,8 +9,8 @@
 
     <ui:composition template="template.xhtml">
         <ui:define name="pageContent">
-            <h1>People data</h1>
-            <p>This page is rendered by JSF.</p>
+            <h1>#{msgs['people.title']}</h1>
+            <p>#{msgs['people.intro']}</p>
             <h:dataTable id="peopleTable" value="#{personBean.allPeople()}" var="person" styleClass="table table-striped">
                 <h:column>
                     <f:facet name="header">
@@ -42,15 +42,15 @@
                     </f:facet>
                     <h:form>
                         <h:commandLink styleClass="btn btn-xs btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
+                            <span class="glyphicon glyphicon-remove"></span> #{msgs['people.controls.remove']}
                             <f:ajax render="peopleTable" listener="#{personBean.remove(person.id)}"/>
                         </h:commandLink>
                     </h:form>
                 </h:column>
             </h:dataTable>
 
-            <h:link styleClass="btn btn-default" outcome="index"><span class="glyphicon glyphicon-home"></span> Home</h:link>
-            <h:link styleClass="btn btn-default" outcome="registration"><span class="glyphicon glyphicon-user"></span> New Person</h:link>
+            <h:link styleClass="btn btn-default" outcome="index"><span class="glyphicon glyphicon-home"></span> #{msgs['people.links.home']}</h:link>
+            <h:link styleClass="btn btn-default" outcome="registration"><span class="glyphicon glyphicon-user"></span> #{msgs['people.links.register']}</h:link>
         </ui:define>
     </ui:composition>
 

@@ -6,6 +6,16 @@
               version="2.2">
 
 <!-- TODO Configure the languages in the `faces-config.xml` -->
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>nl</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>Messages</base-name>
+            <var>msgs</var>
+        </resource-bundle>
+    </application>
 <!-- TODO Configure the resource and error message bundles in `faces-config.xml` -->
 
 </faces-config>
