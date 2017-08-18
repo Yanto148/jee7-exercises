@@ -10,19 +10,22 @@
         <ui:define name="pageContent">
             <h1>Fill in Person Data</h1>
             <h:form>
-                <div class="form-group">
+                <div class="form-group #{not component.findComponent('firstName').valid and facesContext.validationFailed ? 'has-error' : '' }">
                     <h:outputLabel for="firstName">First Name</h:outputLabel>
                     <h:inputText id="firstName" value="#{registrationFlowBean.person.firstName}" styleClass="form-control"/>
+                    <h:message for="firstName" errorClass="has-error control-label"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group #{not component.findComponent('lastName').valid and facesContext.validationFailed ? 'has-error' : '' }">
                     <h:outputLabel for="lastName">Last Name</h:outputLabel>
                     <h:inputText id="lastName" value="#{registrationFlowBean.person.lastName}" styleClass="form-control"/>
+                    <h:message for="lastName" errorClass="has-error control-label"/>
                 </div>
-                <div class="form-group">
+                <div class="form-group #{not component.findComponent('birthDate').valid and facesContext.validationFailed ? 'has-error' : '' }">
                     <h:outputLabel for="birthDate">Birth Date <small>(yyyy-MM-dd)</small></h:outputLabel>
                     <h:inputText id="birthDate" value="#{registrationFlowBean.person.birthDate}" styleClass="form-control">
                         <f:convertDateTime pattern="yyyy-MM-dd"/>
                     </h:inputText>
+                    <h:message for="birthDate" errorClass="has-error control-label"/>
                 </div>
                 <h:commandButton styleClass="btn btn-primary" value="Next page" action="register-address"/> <!-- Action is id of <view> -->
             </h:form>

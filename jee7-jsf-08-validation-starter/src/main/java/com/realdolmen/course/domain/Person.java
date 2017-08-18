@@ -4,6 +4,7 @@ import com.realdolmen.course.utils.DateUtils;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -25,13 +26,16 @@ public class Person implements Serializable {
     private Long id;
 
     @Column(nullable = false, length = 200)
+    @NotNull @Size(min = 1, max = 200, message = "Moet tussen de 1 en de 200 karakters zijn")
     private String firstName;
 
     @Column(nullable = false, length = 200)
+    @NotNull @Size(min = 1, max = 200, message = "Moet tussen de 1 en de 200 karakters zijn")
     private String lastName;
 
     @Temporal(TemporalType.DATE)
     @Column(nullable = false)
+    @NotNull(message = "Moet ingevuld zijn") @Past(message = "Datum moet in het verleden liggen")
     private Date birthDate;
 
     @Transient

@@ -4,15 +4,21 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 // TODO Make all fields required
 
 @Embeddable
 public class Address implements Serializable {
+    @NotNull @Size(min = 1, message = "Moet ingevuld zijn")
     private String street;
+    @NotNull @Size(min = 1, message = "Moet ingevuld zijn")
     private String number;
+    @NotNull @Size(min = 1, message = "Moet ingevuld zijn")
     private String city;
+    @NotNull @Size(min = 1, message = "Moet ingevuld zijn")
     private String postalCode;
 
     public Address() {

@@ -16,18 +16,22 @@
                 <div class="form-group">
                     <h:outputLabel for="street">Street</h:outputLabel>
                     <h:inputText id="street" value="#{registrationFlowBean.person.address.street}" styleClass="form-control"/>
+                    <h:message for="street"/>
                 </div>
                 <div class="form-group">
                     <h:outputLabel for="number">Number</h:outputLabel>
                     <h:inputText id="number" value="#{registrationFlowBean.person.address.number}" styleClass="form-control"/>
+                    <h:message for="number"/>
                 </div>
                 <div class="form-group">
                     <h:outputLabel for="postalCode">Postal Code</h:outputLabel>
                     <h:inputText id="postalCode" value="#{registrationFlowBean.person.address.postalCode}" styleClass="form-control"/>
+                    <h:message for="postalCode"/>
                 </div>
                 <div class="form-group">
                     <h:outputLabel for="city">City</h:outputLabel>
                     <h:inputText id="city" value="#{registrationFlowBean.person.address.city}" styleClass="form-control"/>
+                    <h:message for="city"/>
                 </div>
                 <h:commandButton value="Finish" action="end" styleClass="btn btn-primary"/>
             </h:form>
