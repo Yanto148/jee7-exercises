@@ -22,9 +22,15 @@
             <div class="container">
                 <div class="pull-right">
                     <h:form id="language_form">
-                        <h:commandLink action="#{languageSwitcher.changeLanguage('en')}" value="#{msgs['language.en']}" /> |
-                        <h:commandLink action="#{languageSwitcher.changeLanguage('fr')}" value="#{msgs['language.fr']}" /> |
-                        <h:commandLink action="#{languageSwitcher.changeLanguage('nl')}" value="#{msgs['language.nl']}" />
+                        <h:commandLink value="#{msgs['language.en']}" >
+                            <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('en')}"/>
+                        </h:commandLink> |
+                        <h:commandLink value="#{msgs['language.fr']}" >
+                            <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('fr')}"/>
+                        </h:commandLink> |
+                        <h:commandLink value="#{msgs['language.nl']}" >
+                            <f:ajax render="@all" listener="#{languageSwitcher.changeLanguage('nl')}"/>
+                        </h:commandLink>
                     </h:form>
                 </div>
             </div>

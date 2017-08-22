@@ -4,11 +4,13 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Embeddable;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 // TODO (Optional) Add JAXB annotations to `Person` and `Address`
 
 @Embeddable
+@XmlRootElement
 public class Address implements Serializable {
     @NotBlank
     private String street;

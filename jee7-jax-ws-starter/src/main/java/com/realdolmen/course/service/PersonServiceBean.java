@@ -6,6 +6,7 @@ import com.realdolmen.course.repository.PersonRepository;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @Stateless
