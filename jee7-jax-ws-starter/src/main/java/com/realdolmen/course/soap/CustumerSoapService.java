@@ -11,18 +11,23 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.xml.soap.SOAPException;
 import java.util.List;
 
-@WebService(serviceName = "CustumerService", name="CustumerServicePortType", portName = "CustomerServicePort")
+//@WebService(serviceName = "CustumerService", name="CustumerServicePortType", portName = "CustomerServicePort")
+@WebService
 public interface CustumerSoapService
 {
     @WebMethod(operationName = "Create")
+    //@WebMethod
     void create(@WebParam(name = "name") String name, @WebParam(name = "address") Address address);
 
     @WebMethod(operationName = "QuerySingle")
+    //@WebMethod
     Customer querySingle(@WebParam(name = "id") Integer id) throws SOAPException;
 
     @WebMethod(operationName = "QueryAll")
+    //@WebMethod
     List<Customer> queryAll();
 
     @WebMethod(operationName = "QueryByName")
+    //@WebMethod
     Customer queryByName(@WebParam(name = "name") String name) throws SOAPException;
 }

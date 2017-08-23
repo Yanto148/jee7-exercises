@@ -15,5 +15,5 @@ public interface PersonSoapService
 {
 
     @WebMethod
-    public @WebResult(name="persons") List<Person> findAllPersons();
+    @WebResult(name="persons") List<Person> findAllPersons();
 }
