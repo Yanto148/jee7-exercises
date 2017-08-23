@@ -3,3 +3,5 @@ insert into person(id, firstName, lastName, birthDate, email, street, number, po
 insert into person(id, firstName, lastName, birthDate, email, street, number, postalCode, city, version) values(3, 'Tyler', 'Turner', '1983-07-15', 'tyler@example.com', 'Masonstreet', '72B', '5874', 'Winterfell', 1);
 insert into person(id, firstName, lastName, birthDate, email, street, number, postalCode, city, version) values(4, 'Marcia', 'Jackson', '1975-03-28', 'marcia@example.com', 'Factory Lane', '100/7', '1578', 'Glasgow', 1);
 insert into person(id, firstName, lastName, birthDate, email, street, number, postalCode, city, version) values(5, 'Allan', 'Wilson', '1964-12-28', 'allan@example.com', 'Turingstreet', '1', '2547', 'Newcastle', 1);
+insert into customer(id, name, street, number, postalCode, city) values(5, 'Yanto Maes', 'Rodenbachstraat', '25', '9470', 'Denderleeuw');
+insert into customer(id, name, street, number, postalCode, city) values(6, 'Joren Maes', 'Zijpstraat', '148', '2570', 'Duffel');
