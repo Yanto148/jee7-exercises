@@ -33,7 +33,7 @@ public class PersonRestServiceEndpoint
     }
 
     @GET
-    //@Path("/person")
+    @Path("/person")
     public List<Person> findByName(@QueryParam("firstname") String firstName, @QueryParam("lastname") String lastName)
     {
         return personService.findByName(firstName, lastName);
