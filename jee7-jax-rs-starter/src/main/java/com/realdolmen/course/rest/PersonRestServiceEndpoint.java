@@ -5,20 +5,15 @@ import com.realdolmen.course.service.PersonServiceBean;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-/**
- * This is an endpoint for a JAX-RS RESTful web service.
- */
+@Stateless
 @Path("/people")
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-@Stateless
-public class PersonRestServiceEndpoint {
+public class PersonRestServiceEndpoint
+{
     @EJB
     PersonServiceBean personService;
 
@@ -33,5 +28,12 @@ public class PersonRestServiceEndpoint {
     @Path("/all")
     public List<Person> findAll2() {
         return personService.findAll();
+    }
+
+    @POST
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Person save(Person person)
+    {
+        return personService.save(person);
     }
 }
