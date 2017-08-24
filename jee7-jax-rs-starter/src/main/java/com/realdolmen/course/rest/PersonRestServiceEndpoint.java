@@ -17,6 +17,7 @@ public class PersonRestServiceEndpoint
     @EJB
     PersonServiceBean personService;
 
+    // Met personlist wrapper kunnen we de xml aanpassen, zo kunnen we het root element 'people' noemen, standaard noemt dit collection
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public PersonList findAll() {
