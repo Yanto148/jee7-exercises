@@ -38,4 +38,9 @@ public class PersonServiceBean implements PersonServiceRemote{
     public long countPeopleByEmail(String email) {
         return personRepository.countPeopleByEmail(email);
     }
+
+    public List<Person> findByName(String firstName, String lastName)
+    {
+        return personRepository.findByName(firstName, lastName);
+    }
 }

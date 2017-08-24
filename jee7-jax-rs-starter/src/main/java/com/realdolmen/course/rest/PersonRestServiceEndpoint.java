@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Stateless
 @Path("/people")
@@ -27,8 +28,22 @@ public class PersonRestServiceEndpoint
     @GET
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Path("/all")
-    public List<Person> findAll2() {
+    public List<Person> findAllNoWrapper() {
         return personService.findAll();
+    }
+
+    @GET
+    //@Path("/person")
+    public List<Person> findByName(@QueryParam("firstname") String firstName, @QueryParam("lastname") String lastName)
+    {
+        return personService.findByName(firstName, lastName);
+    }
+
+    @GET
+    @Path("/person/{id}")
+    public Person findById(@PathParam("id") long id)
+    {
+        return personService.findById(id);
     }
 
     @POST

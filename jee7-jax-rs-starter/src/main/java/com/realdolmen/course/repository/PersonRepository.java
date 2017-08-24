@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.lang.reflect.Type;
 import java.util.List;
 
 @Stateless
@@ -27,6 +29,14 @@ public class PersonRepository {
 
     public List<Person> findAll() {
         return em.createQuery("select p from Person p", Person.class).getResultList();
+    }
+
+    public List<Person> findByName(String firstName, String lastName)
+    {
+        TypedQuery<Person> query = em.createQuery("select p from Person p where p.firstName = :firstName AND p.lastName = :lastName", Person.class);
+        query.setParameter("firstName", firstName);
+        query.setParameter("lastName", lastName);
+        return query.getResultList();
     }
 
     public Long countPeopleByEmail(String email) {
