@@ -7,4 +7,4 @@ insert into person(id, firstName, lastName, birthDate, email, street, number, po
 insert into order_client(id, price, person_id) values(1, 10, 3)
 insert into order_client(id, price, person_id) values(2, 15, 2)
 insert into order_client(id, price, person_id) values(3, 20, 3)
-insert into order_client(id, price, person_id) values(4, 25, 1)
+insert into order_client(id, price, person_id) values(4, 25, 4)
