@@ -13,4 +13,6 @@ public interface OrderService
     List<Order> findAll();
 
     Order findById(Long id);
+
+    void remove(long id);
 }

@@ -1,5 +1,6 @@
 package com.realdolmen.course.repository;
 
+import com.realdolmen.course.domain.Order;
 import com.realdolmen.course.domain.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.awt.print.Book;
 import java.lang.reflect.Type;
 import java.util.List;
 

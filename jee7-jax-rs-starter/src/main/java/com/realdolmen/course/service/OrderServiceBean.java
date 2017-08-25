@@ -32,4 +32,9 @@ public class OrderServiceBean implements OrderService
     public Order findById(Long id) {
         return orderRepository.findById(id);
     }
+
+    @Override
+    public void remove(long id) {
+        orderRepository.remove(id);
+    }
 }

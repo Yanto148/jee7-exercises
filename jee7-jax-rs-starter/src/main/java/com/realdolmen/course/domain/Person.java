@@ -27,8 +27,8 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "person")
-    @XmlTransient
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    //@XmlTransient
     private List<Order> orders = new ArrayList<>();
 
     @Column(nullable = false, length = 200)
